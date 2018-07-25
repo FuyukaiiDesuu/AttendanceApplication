@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace AttendanceAppplication
 {
-    public partial class Form1 : Form
+    public partial class LOGIN : Form
     {
-        public Form1()
+        public LOGIN()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LOGIN_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
