@@ -10,30 +10,25 @@ using System.Windows.Forms;
 
 namespace AttendanceAppplication
 {
-    public partial class LOGIN : Form
+    public partial class MainDashboard : Form
     {
-        public LOGIN()
+        public LOGIN pointToLogin { get; set; }
+        public MainDashboard()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void MainDashboard_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void LOGIN_Load(object sender, EventArgs e)
-        {
-
-        }
-        public MainDashboard md;
+        public attendanceApp ap;
         private void button1_Click(object sender, EventArgs e)
         {
-            md = new MainDashboard();
-            md.Show();
-            md.pointToLogin = this;
+            ap = new attendanceApp();
+            ap.Show();
+            ap.pointToDboard = this;
             this.Hide();
-            
         }
     }
 }
