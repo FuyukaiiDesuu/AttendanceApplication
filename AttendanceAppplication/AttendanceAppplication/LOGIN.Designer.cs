@@ -54,6 +54,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(351, 61);
             this.button1.TabIndex = 1;
+            this.button1.TabStop = false;
             this.button1.Text = "LOGIN";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -63,6 +64,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(127, 128);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(236, 29);
             this.textBox1.TabIndex = 2;
             // 
@@ -72,7 +74,7 @@
             this.textBox2.Location = new System.Drawing.Point(127, 74);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(236, 29);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 1;
             // 
             // label2
             // 

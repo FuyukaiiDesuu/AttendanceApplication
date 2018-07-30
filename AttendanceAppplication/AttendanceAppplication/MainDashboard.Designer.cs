@@ -86,6 +86,7 @@
             this.lgoutbtn.TabIndex = 3;
             this.lgoutbtn.Text = "Logout";
             this.lgoutbtn.UseVisualStyleBackColor = false;
+            this.lgoutbtn.Click += new System.EventHandler(this.lgoutbtn_Click);
             // 
             // MainDashboard
             // 

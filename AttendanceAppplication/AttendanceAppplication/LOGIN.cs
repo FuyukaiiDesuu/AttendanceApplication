@@ -32,15 +32,34 @@ namespace AttendanceAppplication
         private void button1_Click(object sender, EventArgs e)
         {
             var dbconnect = new connector();
-            string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet WHERE studentprofile.Status = 1;";
-            using (dbconnection = dbconnect.connector())
+            
+            using (dbconnection = dbconnect.connecter())
             {
+                dbconnection.Open();
+                MySqlCommand query = new MySqlCommand("SELECT * FROM userlist WHERE username = '"+textBox1.Text+"'and password = '"+textBox2.Text+"';", dbconnection);
+                MySqlDataAdapter listener = new MySqlDataAdapter(query);
+                DataTable holder = new DataTable();
+                listener.Fill(holder);
 
+                //MessageBox.Show(perm.Substring(0,1));
+
+                if (holder.Rows.Count > 0)
+                {
+                    string perm = holder.Rows[0]["restrictions"].ToString();
+                    //var uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                    MessageBox.Show("Succesful Login!");
+                    md = new MainDashboard(perm);
+                    md.Show();
+                    md.pointToLogin = this;
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Credentials!");
+                }
             }
-                md = new MainDashboard();
-            md.Show();
-            md.pointToLogin = this;
-            this.Hide();
+               
             
         }
     }
